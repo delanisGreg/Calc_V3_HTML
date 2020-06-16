@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<script>
+			function insert (num){
+				document.form.numview.value = document.form.numview.value+num;
+			}
+			function plus(num1){
+				var num1 = document.form.numview.value;
+				document.form.numview.value = "";
+			}
+			function minus(num1){
+				var num1 = document.form.numview.value;
+				document.form.numview.value = "";
+			}
+			function multiple(num1){
+				var num1 = document.form.numview.value;
+				document.form.numview.value = "";
+			}
+			function divide(num1){
+				var num1 = document.form.numview.value;
+				document.form.numview.value = "";
+			}
+			function equal(num2){
+				var num2 = document.form.numview.value;
+				document.form.numview.value = document.form.sum.value;
+			}
+			function clean(){
+				document.form.numview.value = "";
+			}
+			function back(){
+				var number = document.form.numview.value;
+				document.form.numview.value = number.substring(0,number.length-1);
+			}
+		</script>
+		<style></style>
+	</head>
+	<body>
+		<div class="main">
+			<form  name = "form">
+				<input class="numview" style="width: 117px" name="numview" disabled>
+				<table>
+					<tr>
+						<td><input action='/' method='POST' class="button" style="width: 25px" type="button" value="C" onclick="clean()"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="<" onclick="back()"></td>
+						<td><input method='POST' type='submit' class="button" style="width: 25px" type="button" value="/" onclick="divide()"></td>
+						<td><input action='/num1' method='POST' type='submit' class="button" style="width: 25px" type="button" value="*" onclick="multiple()"></td>
+					</tr>
+					<tr>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="7" onclick="insert(7)"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="8" onclick="insert(8)"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="9" onclick="insert(9)"></td>
+						<td><input action='/num1' method='POST' type='submit' class="button" style="width: 25px" type="button" value="-" onclick="minus()"></td>
+					</tr>								
+					<tr>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="4" onclick="insert(4)"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="5" onclick="insert(5)"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="6" onclick="insert(6)"></td>
+						<td><input action='/num1' method='POST' type='submit' class="button" style="width: 25px" type="button" value="+" onclick="plus()" name="add"></td>
+					</tr>						
+					<tr>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="1" onclick="insert(1)"></td>
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="2" onclick="insert(2)"></td>						
+						<td><input method='POST' class="button" style="width: 25px" type="button" value="3" onclick="insert(3)"></td>								
+						<td><input action='/sum' method='POST' type='submit' class="button" style="width: 25px" type="button" value="=" onclick="equal()"></td> 
+					</tr>
+					<tr>
+						<td colspan=2><input method='POST' class="button" style="width: 55px" type="button" value="0" onclick="insert(0)"></td>
+					</tr>
+				</table>
+			</form>
+		<!--	<form action='/sum' method='POST' name = "form">
+					<input class="numview" style="width: 117px" name="numview">
+					<table>
+						<td><input type='submit' class="button" style="width: 25px" type="button" value="=" onclick="equal()"></td>
+					</table>	
+			</form> -->
+		</div>
+	</body>
+</html>
